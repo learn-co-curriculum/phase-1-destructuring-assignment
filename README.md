@@ -2,7 +2,7 @@
 
 ## Learning Goals
 
-<!-- -WRITE Destructuring SWABTS HERE  -->
+- Use destructuring to assign data to variables
 
 ## Introduction
 
