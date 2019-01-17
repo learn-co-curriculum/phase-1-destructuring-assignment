@@ -9,7 +9,7 @@
 As developers, sometimes we receive information and we don't know exactly how
 it's going to come in, how much is going to come in, or exactly what's going to
 be contained within it, but there's going to be some part of it that's going to
-be predictable, and _that's_ that part of it that we want to parse and deal
+be predictable, and _that's_ the part of it that we want to parse and deal
 with. This is especially helpful in cases where we might get pieces of data that
 are required, such as name and email address, but also optional pieces of data,
 such as phone number or Instagram username. This is where JavaScript
@@ -19,29 +19,117 @@ objects, maps, and sets into their own variable.
 
 ## Use Destructuring to Assign Data to Variables
 
-Another use case where this is particularly helpful is with HTTP response headers. A normal HTTP response header looks like this:
-```
-200 OK
-Access-Control-Allow-Origin: *
-Connection: Keep-Alive
-Content-Encoding: gzip
-Content-Type: text/html; charset=utf-8
-Date: Mon, 18 Jul 2016 16:06:00 GMT
-Etag: "c561c68d0ba92bbeb8b0f612a9199f722e3a621a"
-Keep-Alive: timeout=5, max=997
-Last-Modified: Mon, 18 Jul 2016 02:36:04 GMT
-Server: Apache
-Set-Cookie: mykey=myvalue; expires=Mon, 17-Jul-2017 16:06:00 GMT; Max-Age=31449600; Path=/; secure
-Transfer-Encoding: chunked
-Vary: Cookie, Accept-Encoding
-X-Backend-Server: developer2.webapp.scl3.mozilla.com
-X-Cache-Info: not cacheable; meta data too large
-X-kuma-revision: 1085259
-x-frame-options: DENY
+In JavaScript, when we want to assign data to single variables from a top level object such as this, we normally do it individually like so:
+
+```js
+const doggie = {
+  first: 'Buzz',
+  breed: 'Great Pyrenees',
+  fur_color: 'black and white',
+  activity_level: 'sloth-like',
+  favorite_food: 'hot_dogs'
+};
+const first = doggie.first;  // Buzz
+const breed = doggie.breed; // Great Pyrenees
+
 ```
 
+This is pretty repetitive code, and it feels like there should be an easier way to do this. With `destructuring`, there is! JavaScript gives us the ability to assign multiple single variables at one time using a simple syntax. 
 
-## SWBAT 2
+```js
+
+const doggie = {
+  first: 'Buzz',
+  breed: 'Great Pyrenees',
+  fur_color: 'black and white',
+  activity_level: 'sloth-like',
+  favorite_food: 'hot_dogs'
+};
+
+const { first, breed } = doggie;
+console.log(first); 
+console.log(breed); 
+
+```
+
+We can also use it to destructure a nested syntax:
+```js
+
+const doggie = {
+  first: 'Buzz',
+  breed: 'Great Pyrenees',
+  fur_color: 'black and white',
+  activity_level: 'sloth-like',
+  favorite_foods: {
+    meats:{
+      ham: 'smoked',
+      hot_dog: 'oscar_meyer',
+    },
+    cheeses:{
+      american: 'kraft'
+    }
+  }
+};
+
+const { ham, hot_dog } = doggie.favorite_foods.meats;
+console.log(ham); 
+console.log(hot_dog); 
+
+```
+
+### Destructuring Assignment with Arrays
+
+Destructuring does not just work on objects - we can also use the same syntax with arrays as well.
+
+```js
+
+const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff']
+const [medium, small, giant] = dogs
+console.log(medium, small, giant) // Great Pyrenees, Pug, Bull Mastiff
+```
+
+The cool part is we can pick the parts of the array that we want to assign!
+
+```js
+
+const dogs = ["Great Pyrenees", "Pug", "Bull Mastiff"]
+const [, small, giant] = dogs
+console.log(small , giant) //  Pug, Bull Mastiff
+```
+
+### Destructuring Assignment with Strings
+
+We can also destructure with strings, as a whole:
+
+```js
+
+const [firstName, lastName,title] = "Corinna BrockMoore Curriculum".split(" ")
+console.log(firstName, lastName, title) // Corinna BrockMoore Curriculum
+
+```
+And we can also destructure it in parts, just as we did with arrays above: 
+
+```js
+
+const [firstName, ,title] = "Corinna BrockMoore Curriculum".split(" ")
+console.log(firstName, title) // Corinna Curriculum
+
+```
+## Instructions
+
+- Strings
+  - Simple destructure split with everything
+  - pull off first part
+  - pull off last part
+  - pull out middle
+- Arrays
+  - Simple destructure split with everything
+  - pull off first part
+  - pull off last part
+  - pull out middle
+- Objects
+  - simple object
+  - nested object
 
 ## Conclusion
 
