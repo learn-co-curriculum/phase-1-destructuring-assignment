@@ -92,7 +92,7 @@ The cool part is we can pick the parts of the array that we want to assign!
 
 ```js
 
-const dogs = ["Great Pyrenees", "Pug", "Bull Mastiff"]
+const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff']
 const [, small, giant] = dogs
 console.log(small , giant) //  Pug, Bull Mastiff
 ```
@@ -102,26 +102,27 @@ console.log(small , giant) //  Pug, Bull Mastiff
 We can also destructure with strings, as a whole:
 
 ```js
-
-const [firstName, lastName,title] = "Corinna BrockMoore Curriculum".split(" ")
+const curriculumWriter = 'Corinna BrockMoore Curriculum'
+const [firstName, lastName,title] = 'Corinna BrockMoore Curriculum'.split(' ')
 console.log(firstName, lastName, title) // Corinna BrockMoore Curriculum
 
 ```
 And we can also destructure it in parts, just as we did with arrays above: 
 
 ```js
-
-const [firstName, ,title] = "Corinna BrockMoore Curriculum".split(" ")
+const curriculumWriter = 'Corinna BrockMoore Curriculum'
+const [firstName, ,title] = 'Corinna BrockMoore Curriculum'.split(' ')
 console.log(firstName, title) // Corinna Curriculum
 
 ```
+
 ## Instructions
 
-- Strings
-  - Simple destructure split with everything
-  - pull off first part
-  - pull off last part
-  - pull out middle
+We are going to give you several strings, arrays, and objects and you're going
+to write several destructuring assignments for each. Write your code in the
+`index.js` file. Let the instructions in the README and the tests guide you
+through the process. 
+
 - Arrays
   - Simple destructure split with everything
   - pull off first part
