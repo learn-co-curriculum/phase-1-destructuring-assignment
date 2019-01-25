@@ -123,14 +123,6 @@ to write several destructuring assignments for each. Write your code in the
 `index.js` file. Let the instructions in the README and the tests guide you
 through the process. 
 
-- Arrays
-  - Simple destructure split with everything
-  - pull off first part
-  - pull off last part
-  - pull out middle
-- Objects
-  - simple object
-  - nested object
 
 ## Conclusion
 
