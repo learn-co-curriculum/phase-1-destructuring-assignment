@@ -129,14 +129,14 @@ to write several destructuring assignments for each. Write your code in the
 `index.js` file. Let the instructions in the README and the tests guide you
 through the process. 
 
-
 ## Conclusion
 
-`destructuring` assignment is a fast, and efficient way to assign data to
+"Destructuring assignment" is a fast, and efficient way to assign data to
 variables from objects, arrays, and strings. It allows us to pick and choose the
 pieces of data that we want to assign, and gives us lots of freedom to
 manipulate the data as it is coming in. With practice, you'll be proficient at
 it in no time. 
 
 ## Resources
-[Destructuring assignment]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+* [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
