@@ -82,16 +82,26 @@ const doggie = {
 const { ham, hot_dog } = doggie.favorite_foods.meats;
 console.log(ham); 
 console.log(hot_dog); 
-
 ```
+
+Big message: pick out the keys you want, don't worry about the keys you don't
+want, and "extract" them into variables with destructuring.
 
 ### Destructuring Assignment with Arrays
 
 Destructuring does not just work on objects - we can also use the same syntax
 with `Array`s as well. 
 
-```js
+Because `Array`s are ordered (something in index `0`, `1`, ... etc), if we
+provide the equivalent number of "slots," the `Array`s elements will be
+automatically assigned _into_ the variable names in the order they were specified.
 
+Below we have three dog breeds specified in an `Array` called `dogs`. We then
+create three new `const`s. Three elements in the `Array` are destructured into
+the three `const`s.
+
+
+```js
 const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff']
 const [medium, small, giant] = dogs
 console.log(medium, small, giant) // Great Pyrenees, Pug, Bull Mastiff
