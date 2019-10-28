@@ -33,9 +33,16 @@ const first = doggie.first;  // Buzz
 const breed = doggie.breed; // Great Pyrenees
 ```
 
-This is pretty repetitive code, and it feels like there should be an easier way
-to do this. With `destructuring`, there is! JavaScript gives us the ability to
-assign multiple single variables at one time using a simple syntax. 
+This is repetitive code. The algorithm at play is:
+
+1. Declare a variable with a name (e.g. `first` or `breed`)
+2. Use that variable's name to point to an attribute in the `Object` whose name
+   matches the name of the variable (e.g. `doggie.breed` or `doggie.first`)
+3. Assign the attribute's value to the created variable
+
+
+JavaScript gives us the ability to perform this algorithm with _one_ simple
+line of code.
 
 ```js
 
