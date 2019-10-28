@@ -8,10 +8,13 @@
 
 As developers, sometimes we receive information in a collection like an
 `Object` and we want to "pick and choose" elements out of the collection. It's
-a major pain to extract each property / value pair out of an Object. Here
-_destructuring_ can be a real help! Not only does destructuring help when
-working with data in your application, it's essential for understanding how
-to get JavaScript to include third-party code (like you find on [npm][]).
+a major pain to extract each property / value pair out of an `Object` and then
+assign it to a variable.
+
+Destructuring lets us type less and be more clear about what we want to pull
+out of an `Object`.  Not only does destructuring help when working with data in
+your application, it's essential for understanding how to get JavaScript to
+include third-party code (like you find on [npm][]).
 
 ## Use Destructuring to Assign Data to Variables
 
@@ -92,7 +95,7 @@ The cool part is we can pick the parts of the `Array` that we want to assign!
 
 const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff']
 const [, small, giant] = dogs
-console.log(small , giant) //  Pug, Bull Mastiff
+console.log(small, giant) //  Pug, Bull Mastiff
 ```
 
 ### Destructuring Assignment with Strings
