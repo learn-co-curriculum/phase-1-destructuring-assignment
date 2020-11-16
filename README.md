@@ -61,6 +61,7 @@ console.log(breed);
 ```
 
 We can also use it to destructure a nested syntax:
+
 ```js
 
 const doggie = {
@@ -98,6 +99,7 @@ console.log(medium, small, giant) // Great Pyrenees, Pug, Bull Mastiff
 ```
 
 The cool part is we can pick the parts of the `Array` that we want to assign!
+
 ```js
 
 const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff']
