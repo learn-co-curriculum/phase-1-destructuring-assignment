@@ -135,7 +135,7 @@ assignments with the second element.
 
 ### Using Destructuring Assignment with Strings
 
-We can also destructure with strings by using the `[String.prototype.split()][]`
+We can also destructure with strings by using the [`String.prototype.split()`][]
 method to turn the string into an array:
 
 ```js
