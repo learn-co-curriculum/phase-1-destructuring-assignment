@@ -135,8 +135,8 @@ assignments with the second element.
 
 ### Using Destructuring Assignment with Strings
 
-We can also destructure with strings by using the `split()` method to turn the
-string into an array:
+We can also destructure with strings by using the `[String.prototype.split()]`
+method to turn the string into an array:
 
 ```js
 const dogsName = 'Sir Woody BarksALot';
@@ -173,3 +173,4 @@ proficient at it in no time.
 - [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 [npm]: https://www.npmjs.com/
+[String.prototype.split()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
