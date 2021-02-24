@@ -68,7 +68,7 @@ with those keys to the corresponding variable names. This is known as
 _destructuring assignment_.
 
 Note that because the engine is looking for the attributes by their keys, the
-order inside the `{}` doesn't matter. This works as well:
+order inside the `{}` doesn't matter — this works as well:
 
 ```js
 const { breed, name } = doggie;
@@ -107,7 +107,7 @@ keys: `doggie.favoriteFoods.meats`.
 ### Using Destructuring Assignment with Arrays
 
 Destructuring does not just work on objects — we can use the same syntax
-with `Array`s as well.
+with `Array`s.
 
 ```js
 
