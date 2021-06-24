@@ -1,3 +1,5 @@
+const { expect } = require("chai")
+
 describe("index.js", () => {
   it("String: uses destructuring to declare five animal sounds", () => {
     expect(moo).to.exist
@@ -12,18 +14,18 @@ describe("index.js", () => {
     expect(cluck).to.equal("chicken")
   })
   it("String: uses destructuring to declare the four traditional animal names", () => {
-    expect(Bessie).to.exist
-    expect(Bessie).to.equal("cow")
-    expect(Dolly).to.exist
-    expect(Dolly).to.equal("sheep")
-    expect(Babe).to.exist
-    expect(Babe).to.equal("pig")
-    expect(Little).to.exist
-    expect(Little).to.equal("chicken")
+    expect(bessie).to.exist
+    expect(bessie).to.equal("cow")
+    expect(dolly).to.exist
+    expect(dolly).to.equal("sheep")
+    expect(babe).to.exist
+    expect(babe).to.equal("pig")
+    expect(little).to.exist
+    expect(little).to.equal("chicken")
   })
   it("String: uses destructuring to declare the three traditional animal colors", () => {
-    expect(black_and_white).to.exist
-    expect(black_and_white).to.equal("cow")
+    expect(blackAndWhite).to.exist
+    expect(blackAndWhite).to.equal("cow")
     expect(black).to.exist
     expect(black).to.equal("sheep")
     expect(pink).to.exist
@@ -65,26 +67,26 @@ describe("index.js", () => {
   })
   
   it("Object: uses destructuring to assign all appropriate variables using the keys as the variable names", () => {
-    expect(name).to.exist
-    expect(name).to.equal("Kermit")
+    expect(muppetName).to.exist
+    expect(muppetName).to.equal("Miss Piggy")
     expect(color).to.exist
-    expect(color).to.equal("green")
+    expect(color).to.equal("pink")
     expect(song).to.exist
-    expect(song).to.equal("The Rainbow Connection")
+    expect(song).to.equal("Never Before, Never Again")
     expect(job).to.exist
-    expect(job).to.equal("Host of The Muppet Show")
+    expect(job).to.equal("Cast member of The Muppet Show")
     expect(partner).to.exist
-    expect(partner).to.equal("Miss Piggy")
+    expect(partner).to.equal("Kermit")
   })
   
-  it("Object: uses destructuring to assign Kermit's color, songs 2 and 4, and Kermit's job and partner", () => {
-    expect(song_2).to.exist
-    expect(song_2).to.equal("Moving Right Along")
-    expect(song_4).to.exist
-    expect(song_4).to.equal("I Hope That Something Better Comes Along")
-    expect(k_job).to.exist
-    expect(k_job).to.equal("Host of The Muppet Show")
-    expect(k_partner).to.exist
-    expect(k_partner).to.equal("Miss Piggy")
+  it("Object: uses destructuring to assign songs 2 and 4, and Kermit's job and partner", () => {
+    expect(song2).to.exist
+    expect(song2).to.equal("Moving Right Along")
+    expect(song4).to.exist
+    expect(song4).to.equal("I Hope That Something Better Comes Along")
+    expect(nestedJob).to.exist
+    expect(nestedJob).to.equal("Host of The Muppet Show")
+    expect(nestedPartner).to.exist
+    expect(nestedPartner).to.equal("Miss Piggy")
   })
 })
