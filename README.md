@@ -11,10 +11,10 @@ As developers, sometimes we receive information in a collection (e.g., an
 a major pain to individually extract each property / value pair out of an
 `Object` and then assign it to a variable.
 
-Destructuring lets us type less and be more clear about what we want to pull
-out of an `Object`.  Not only does destructuring help when working with data in
-your application, it's essential for understanding how to get JavaScript to
-include third-party code (like you find on [npm][]).
+Destructuring lets us type less and be more clear about what we want to pull out
+of an `Object`. Not only does destructuring help when working with data in your
+application, it's essential for understanding how to get JavaScript to include
+third-party code (like you find on [npm][]).
 
 ## Use Destructuring Assignment to Assign Data to Variables
 
@@ -23,11 +23,11 @@ we know how do it individually like so:
 
 ```js
 const doggie = {
-  name: 'Buzz',
-  breed: 'Great Pyrenees',
-  furColor: 'black and white',
-  activityLevel: 'sloth-like',
-  favoriteFood: 'hot dogs'
+  name: "Buzz",
+  breed: "Great Pyrenees",
+  furColor: "black and white",
+  activityLevel: "sloth-like",
+  favoriteFood: "hot dogs",
 };
 const name = doggie.name;
 const breed = doggie.breed;
@@ -46,26 +46,28 @@ JavaScript gives us the ability to perform this task with _one_ simple line of
 code.
 
 ```js
-
 const doggie = {
-  name: 'Buzz',
-  breed: 'Great Pyrenees',
-  furColor: 'black and white',
-  activityLevel: 'sloth-like',
-  favoriteFood: 'hot dogs'
+  name: "Buzz",
+  breed: "Great Pyrenees",
+  furColor: "black and white",
+  activityLevel: "sloth-like",
+  favoriteFood: "hot dogs",
 };
 
 const { name, breed } = doggie;
 name; // => "Buzz"
 breed; // => "Great Pyrenees"
-
 ```
 
 The `{}` around the variable names tells the JavaScript engine that it's going
 to be pulling values from an `Object`. The engine looks inside the `doggie`
 object for the attributes `name` and `breed` and assigns the values associated
 with those keys to the corresponding variable names. This is known as
-_destructuring assignment_.
+_destructuring assignment_. The general syntax is:
+
+```js
+const { propertiesToPullAndSave } = objectToPullFrom;
+```
 
 Note that because the engine is looking for the attributes by their keys, the
 order inside the `{}` doesn't matter — this works as well:
@@ -79,21 +81,20 @@ breed; // => "Great Pyrenees"
 We can also use destructuring assignment with a nested data structure:
 
 ```js
-
 const doggie = {
-  name: 'Buzz',
-  breed: 'Great Pyrenees',
-  furColor: 'black and white',
-  activityLevel: 'sloth-like',
+  name: "Buzz",
+  breed: "Great Pyrenees",
+  furColor: "black and white",
+  activityLevel: "sloth-like",
   favoriteFoods: {
-    meats:{
-      ham: 'smoked',
-      hotDog: 'Oscar Meyer',
+    meats: {
+      ham: "smoked",
+      hotDog: "Oscar Meyer",
     },
-    cheeses:{
-      american: 'kraft'
-    }
-  }
+    cheeses: {
+      american: "kraft",
+    },
+  },
 };
 
 const { ham, hotDog } = doggie.favoriteFoods.meats;
@@ -106,26 +107,24 @@ keys: `doggie.favoriteFoods.meats`.
 
 ### Using Destructuring Assignment with Arrays
 
-Destructuring does not just work on objects — we can use the same syntax
-with `Array`s.
+Destructuring does not just work on objects — we can use the same syntax with
+`Array`s.
 
 ```js
-
-const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff'];
+const dogs = ["Great Pyrenees", "Pug", "Bull Mastiff"];
 const [medium, small, giant] = dogs;
 console.log(medium, small, giant); // LOG: Great Pyrenees Pug Bull Mastiff
 ```
 
 Note that, this time, we've wrapped the variables we're declaring in `[]`
 instead, so the engine knows we're destructuring an `Array`. In this case, the
-order *does* matter: the engine assigns the first element to `medium`, the
+order _does_ matter: the engine assigns the first element to `medium`, the
 second to `small` and the third to `giant`.
 
 The cool part is we can pick the parts of the `Array` that we want to assign!
 
 ```js
-
-const dogs = ['Great Pyrenees', 'Pug', 'Bull Mastiff'];
+const dogs = ["Great Pyrenees", "Pug", "Bull Mastiff"];
 const [, small, giant] = dogs;
 console.log(small, giant); // LOG: Pug Bull Mastiff
 ```
@@ -135,12 +134,12 @@ assignments with the second element.
 
 ### Using Destructuring Assignment with Strings
 
-We can also destructure with strings by using the [`String.prototype.split()`][split]
-method to turn the string into an array:
+We can also destructure with strings by using the
+[`String.prototype.split()`][split] method to turn the string into an array:
 
 ```js
-const dogsName = 'Sir Woody BarksALot';
-const [title, firstName, lastName] = dogsName.split(' ');
+const dogsName = "Sir Woody BarksALot";
+const [title, firstName, lastName] = dogsName.split(" ");
 console.log(title, firstName, lastName); // LOG: Sir Woody BarksALot
 ```
 
@@ -148,10 +147,51 @@ Because the `split()` method returns an array, we can pick and choose just as we
 did before:
 
 ```js
-const dogsName = 'Sir Woody BarksALot';
-const [title, ,lastName] = dogsName.split(' ');
+const dogsName = "Sir Woody BarksALot";
+const [title, , lastName] = dogsName.split(" ");
 console.log(title, lastName); // LOG: Sir BarksALot
 ```
+
+### Destructuring in Action
+
+As we've now seen, destructuring is a nice quick and easy way to extract data
+from data structures. It's useful in many cases, but let's explore one of the
+most common ways it is used.
+
+The scenario you will likely utilize it most, especially when we get to React in
+Phase 2, is in passing arguments to functions. For example, say we have a
+function programmed to only print a dog's `name` and `breed`. Without
+destructuring, we would write:
+
+```js
+function printNameAndBreed (dog) => {
+  console.log(`${dog.name} the ${dog.breed}`);
+}
+
+printNameAndBreed(doggie);
+// => Buzz the Great Pyrenees
+```
+
+While this works fine, we're passing in more info than our function actually
+needs. Additionally, we need to reference the whole `dog` object each time we
+access a property. If we use destructuring, we can avoid all of that entirely:
+
+```js
+function printNameAndBreed ({ name, breed }) => {
+  console.log(`${name} the ${breed}`);
+}
+
+printNameAndBreed(doggie);
+// => Buzz the Great Pyrenees
+```
+
+We still pass in the entire object as an argument when we invoke the function,
+but now the function does _not_ have access to any properties outside of `name`
+and `breed`. It only extracts the destructured properties.
+
+Additionally, we don't have to use dot notation each time. Of course, in this
+small example, using dot notation once or twice is not a huge deal, but the
+larger your code grows, the more efficient destructuring becomes.
 
 ## Instructions
 
@@ -173,4 +213,5 @@ proficient at it in no time.
 - [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 [npm]: https://www.npmjs.com/
-[split]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+[split]:
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
