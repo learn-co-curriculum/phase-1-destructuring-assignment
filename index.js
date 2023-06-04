@@ -1,7 +1,30 @@
+// Strings
 const farmAnimals = 'cow horse sheep pig chicken';
 
+// Solution to # 1
+const [ moo, neigh, baa, oink, cluck ] = farmAnimals.split(" ")
+
+// Solution to # 2
+const [ bessie, , dolly, babe, little ] = farmAnimals.split(" ")
+
+// Solution to # 3
+const [ blackAndWhite, , black, pink,  ] = farmAnimals.split(" ")
+
+
+// Arrays
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 
+// Solution to # 4
+const [ red, orange, yellow, green, blue, indigo, violet ] = colors
+
+// Solution to # 5
+const [ r, o, y, g, b, , v ] = colors
+
+// Solution to # 6
+const [ , , , , , indg,  ] = colors
+
+
+// Objects
 const muppet = {
   muppetName: 'Miss Piggy',
   color: 'pink',
@@ -24,6 +47,14 @@ const nestedMuppet = {
   nestedJob: 'Host of The Muppet Show',
   nestedPartner: 'Miss Piggy'
 };
+
+// Solution to # 7
+const { muppetName, color, song, job, partner } = muppet
+
+// Solution to # 8
+const { song2, song4 } = nestedMuppet.album.theMuppetMovie
+const { nestedJob, nestedPartner } = nestedMuppet
+
 
 // Strings
 
